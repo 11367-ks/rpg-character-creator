@@ -8,30 +8,56 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" TextWrapping="Wrap" Text="RPG Character Creator" VerticalAlignment="Top" FontSize="48px"/>
-        <TextBlock Grid.Row="1" HorizontalAlignment="Center" Text="Treat Selector" FontSize="22px"/>
-        <ComboBox Name="Treats" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
-        <Button Grid.Row="1" HorizontalAlignment="Right" Content="Add" VerticalAlignment="Bottom" Width="100" />
-
-        <TextBlock Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Text="Skill Selector" FontSize="22px"/>
-        <ComboBox Name="Skills" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
-        <Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Content="Add" VerticalAlignment="Bottom" Width="100" />
-
-        <TextBlock Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" Text="Race Selector" FontSize="22px"/>
-        <ComboBox Name="Races" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120"/>
-        <Button Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Content="Add" VerticalAlignment="Bottom" Width="100" />
-
-        <TextBlock Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Text="Character history" FontSize="22px"/>
-        <TextBox Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
-        <Button Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Content="Add" VerticalAlignment="Bottom" Width="100" />
-
+        <TextBlock Grid.ColumnSpan="2" HorizontalAlignment="Center" Text="RPG Character Creator" VerticalAlignment="Top" FontSize="48px"/>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Treat Selector" FontSize="22px"/>
+            <ComboBox Name="Treats" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <ListView Grid.Row="2"></ListView>
+            <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Add"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Skill Selector" FontSize="22px"/>
+            <ComboBox Name="Skills" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <ListView Grid.Row="2"></ListView>
+            <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Add"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Character history" FontSize="22px"/>
+            <TextBox Grid.Row="1"/>
+            <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Create Character"/>
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Race Selector" FontSize="22px"/>
+            <ComboBox Name="Races" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+        </Grid>
     </Grid>
 </Window>
