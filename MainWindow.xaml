@@ -24,10 +24,15 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Treat Selector" FontSize="22px"/>
-            <ComboBox Name="Treats" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-            <ListView Grid.Row="2"></ListView>
-            <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Add"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Trait Selector" FontSize="22px"/>
+            <ComboBox Name="Traits" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <ListView Name="TraitListView" Grid.Row="2" Grid.ColumnSpan="2"></ListView>
+            <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Add" Click="AddTraitButtonClicked"/>
+            <Button Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Remove" Click="RemoveTraitButtonClicked"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
@@ -36,10 +41,15 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Skill Selector" FontSize="22px"/>
-            <ComboBox Name="Skills" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-            <ListView Grid.Row="2"></ListView>
-            <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Add"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Skill Selector" FontSize="22px"/>
+            <ComboBox Name="Skills" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <ListView Name="SkillListView" Grid.Row="2" Grid.ColumnSpan="2"></ListView>
+            <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Add" Click="AddSkillButtonClicked"/>
+            <Button Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Remove" Click="RemoveSkillButtonClicked"/>
         </Grid>
         <Grid Grid.Row="2" Grid.Column="1">
             <Grid.RowDefinitions>
