@@ -9,4 +9,20 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="images\elf.png" />
+    <None Remove="images\empty.png" />
+    <None Remove="images\furry.png" />
+    <None Remove="images\human.png" />
+    <None Remove="images\reptilian.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\elf.png" />
+    <Resource Include="images\empty.png" />
+    <Resource Include="images\furry.png" />
+    <Resource Include="images\human.png" />
+    <Resource Include="images\reptilian.png" />
+  </ItemGroup>
+
 </Project>

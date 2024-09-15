@@ -11,6 +11,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -27,12 +28,14 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Trait Selector" FontSize="22px"/>
-            <ComboBox Name="Traits" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-            <ListView Name="TraitListView" Grid.Row="2" Grid.ColumnSpan="2"></ListView>
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Trait Selector" FontSize="22px"/>
+            <ComboBox Name="Traits" Grid.Row="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <ListView Name="TraitListView" Grid.Row="2" Grid.ColumnSpan="3"></ListView>
             <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Add" Click="AddTraitButtonClicked"/>
-            <Button Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Remove" Click="RemoveTraitButtonClicked"/>
+            <Button Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Remove selection" Click="RemoveTraitButtonClicked"/>
+            <Button Grid.Row="3" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Purge everything" Click="PurgeTraitButtonClicked"/>
         </Grid>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
@@ -44,30 +47,34 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Skill Selector" FontSize="22px"/>
-            <ComboBox Name="Skills" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-            <ListView Name="SkillListView" Grid.Row="2" Grid.ColumnSpan="2"></ListView>
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Skill Selector" FontSize="22px"/>
+            <ComboBox Name="Skills" Grid.Row="1" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+            <ListView Name="SkillListView" Grid.Row="2" Grid.ColumnSpan="3"></ListView>
             <Button Grid.Row="3" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Add" Click="AddSkillButtonClicked"/>
-            <Button Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Remove" Click="RemoveSkillButtonClicked"/>
+            <Button Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Remove selection" Click="RemoveSkillButtonClicked"/>
+            <Button Grid.Row="3" Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Purge everything" Click="PurgeSkillButtonClicked"/>
         </Grid>
         <Grid Grid.Row="2" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Character history" FontSize="22px"/>
-            <TextBox Grid.Row="1"/>
-            <Button Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Create Character"/>
+            <TextBox Name="History" Grid.Row="1" TextWrapping="Wrap"/>
         </Grid>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Race Selector" FontSize="22px"/>
-            <ComboBox Name="Races" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
+            <ComboBox Name="Races" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Stretch" SelectionChanged="Races_SelectionChanged"/>
+            <Image Name="RaceThumbnail" Grid.Row="2" Source="images/empty.png" Stretch="UniformToFill"></Image>
         </Grid>
+        <Button Grid.Row="3" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Randomize everything" Click="RandomizeButtonClick"/>
+        <Button Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Create character"/>
     </Grid>
 </Window>
