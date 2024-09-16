@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using System.Windows.Media.Imaging;
 
 namespace rpg_character_creator
@@ -184,6 +185,28 @@ namespace rpg_character_creator
                 case 1:
                     History.Text = "Grew up in the bustling city of Rivermoor, always one step ahead of trouble. Orphaned at a young age, she learned to survive on the streets through quick hands and quicker wits. By the age of 15, become one of the best thieves in the city, known for her charm and her knack for slipping away unseen.";
                     break;
+            }
+        }
+
+        private void CreateCharacterClick(object sender, RoutedEventArgs e)
+        {
+            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            using (StreamWriter outFile = new StreamWriter(Path.Combine(docPath, "Character.txt")))
+            {
+                List<string> traits = TraitListView.Items.Cast<string>().ToList();
+                List<string> skills = SkillListView.Items.Cast<string>().ToList();
+
+                outFile.WriteLine("Race: " + Races.Text);
+
+                outFile.WriteLine("Traits:");
+                foreach (string trait in traits) {
+                    outFile.WriteLine("\t- " + trait);
+                }
+                outFile.WriteLine("Skills:");
+                foreach (string skill in skills) {
+                    outFile.WriteLine("\t- " + skill);
+                }
+                outFile.WriteLine("Character story:\n" + History.Text);
             }
         }
     }

@@ -75,6 +75,6 @@
             <Image Name="RaceThumbnail" Grid.Row="2" Source="images/empty.png" Stretch="UniformToFill"></Image>
         </Grid>
         <Button Grid.Row="3" Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Randomize everything" Click="RandomizeButtonClick"/>
-        <Button Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Create character"/>
+        <Button Grid.Row="3" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Content="Create character" Click="CreateCharacterClick"/>
     </Grid>
 </Window>
